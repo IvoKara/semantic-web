@@ -1,13 +1,19 @@
-## Getting Started
+# Semantic Web
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project is intended for exemption from exam in **Semantic Web** university classes which involves designing and creating an OWL ontology that describes a given domain. The ontology does not have to cover the entire domain.
+
+The simple implementation should utilze the [Apache Jena](https://jena.apache.org/index.html) Java Semantic Web Frameworkd 
+
+## Chosen Domain
+
+The chosen domain is related to  **Project Management**‍💼 and is chosen from “*Software Engineering (10th Edition)*” by Ian Sommerville.
 
 ## Folder Structure
 
 The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `lib`: the folder to maintain dependencies. **Here you should put the jena `*.jar` library files** ⚠
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
