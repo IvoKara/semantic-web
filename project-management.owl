@@ -108,6 +108,69 @@
     <Declaration>
         <Class IRI="#TeamMember"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#affectsFinance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#affectsQuality"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#affectsSchedule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#assignedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#followsPhase"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCommunication"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDeliverable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDocument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEmail"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMeeting"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMilestone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPhase"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRisk"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStakeholder"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTask"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#managedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requiresEquipment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requiresMaterial"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sponsoredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesResource"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Client"/>
         <Class IRI="#Stakeholder"/>
@@ -270,6 +333,116 @@
         <Class IRI="#ProjectPhase"/>
         <Class IRI="#Task"/>
     </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#affectsFinance"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#affectsQuality"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#affectsSchedule"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#assignedTo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#followsPhase"/>
+        <ObjectProperty IRI="#hasPhase"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCommunication"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDeliverable"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDocument"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEmail"/>
+        <ObjectProperty IRI="#hasCommunication"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMeeting"/>
+        <ObjectProperty IRI="#hasCommunication"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMilestone"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPhase"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasReport"/>
+        <ObjectProperty IRI="#hasCommunication"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRisk"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStakeholder"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTask"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#managedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#requiresEquipment"/>
+        <ObjectProperty IRI="#usesResource"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#requiresMaterial"/>
+        <ObjectProperty IRI="#usesResource"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#sponsoredBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesResource"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#affectsFinance"/>
+        <ObjectProperty IRI="#affectsQuality"/>
+        <ObjectProperty IRI="#affectsSchedule"/>
+        <ObjectProperty IRI="#assignedTo"/>
+        <ObjectProperty IRI="#hasCommunication"/>
+        <ObjectProperty IRI="#hasDeliverable"/>
+        <ObjectProperty IRI="#hasDocument"/>
+        <ObjectProperty IRI="#hasMilestone"/>
+        <ObjectProperty IRI="#hasPhase"/>
+        <ObjectProperty IRI="#hasRisk"/>
+        <ObjectProperty IRI="#hasStakeholder"/>
+        <ObjectProperty IRI="#hasTask"/>
+        <ObjectProperty IRI="#managedBy"/>
+        <ObjectProperty IRI="#sponsoredBy"/>
+        <ObjectProperty IRI="#usesResource"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasEmail"/>
+        <ObjectProperty IRI="#hasMeeting"/>
+        <ObjectProperty IRI="#hasReport"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#requiresEquipment"/>
+        <ObjectProperty IRI="#requiresMaterial"/>
+    </DisjointObjectProperties>
 </Ontology>
 
 
