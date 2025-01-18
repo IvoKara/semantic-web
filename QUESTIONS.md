@@ -19,6 +19,8 @@
 ## Questions
 
 ### Which are the members of a project?
+In this case the members of a Project which name is "Project Nexus".
+
 ```sql
 PREFIX : <http://www.semanticweb.org/ivo/project-management>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -26,32 +28,30 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?member ?memberName
+SELECT ?projectName ?member ?memberName
 WHERE {
     ?project rdf:type :Project .
+    ?project :hasProjectName ?projectName .
+    FILTER regex(?projectName, "^Project Nexus$") . 
     ?project :hasProjectMember ?member .
     ?member :hasMemberName ?memberName
-} 
+}
 ```
 
 ### Which project manager manages a given project member?
-```sql```sql
+```sql
 PREFIX : <http://www.semanticweb.org/ivo/project-management>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
-```
-
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
- 
+SELECT ?project ?member ?projectManager
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectMember ?member .
+    ?member :managedBy ?projectManager
+}
 ```
 
 ### Who funds a given project?
@@ -62,7 +62,20 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+
+SELECT ?stakeholderName ?stakeholderType ?project
+WHERE {
+    ?stakeholderType rdfs:subClassOf :Stakeholder .
+    ?stakeholder rdf:type ?stakeholderType .
+    ?stakeholder :hasStakeholderName ?stakeholderName .
+     {
+        ?stakeholder :funds ?project .
+    }
+    UNION
+    {
+        ?project :fundedBy ?stakeholder .
+    }
+}
 ```
 
 ### What is the budget of a given project?
