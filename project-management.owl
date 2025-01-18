@@ -267,6 +267,33 @@
     <Declaration>
         <DataProperty IRI="#officeLocated"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Client_Company1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Designer_Maria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sponsor_Person1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sponsor_Person2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#Meeting"/>
         <ObjectUnionOf>
@@ -890,6 +917,42 @@
         <Class IRI="#ProjectManager"/>
         <Class IRI="#TeamMember"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Client"/>
+        <NamedIndividual IRI="#Client_Company1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Designer"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Developer"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Developer"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProjectManager"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#QualityAssurance"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sponsor"/>
+        <NamedIndividual IRI="#Sponsor_Person1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sponsor"/>
+        <NamedIndividual IRI="#Sponsor_Person2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TeamLead"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+    </ClassAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#assignedTo"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -979,17 +1042,188 @@
         <ObjectProperty IRI="#manages"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasEmailSender"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPhase"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasReporter"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasRisk"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSender"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#managedBy"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#reportsTo"/>
     </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#hasSender"/>
+        <ObjectProperty IRI="#hasTask"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#reportsTo"/>
+        <ObjectProperty IRI="#manages"/>
     </InverseFunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#assignedTo"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#fundedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#funds"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasCommunicationMember"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasEmailSender"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasMeetingMember"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasPhase"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasProjectMember"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasRecepient"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasReporter"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasRisk"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSender"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasTask"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#managedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#manages"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#reads"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#reportsTo"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#worksOn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#worksOnDeliverable"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#worksOnFeature"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#worksOnIssue"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#assignedTo"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#fundedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#funds"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasCommunicationMember"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasEmailSender"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasMeetingMember"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasPhase"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasProjectMember"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasRecepient"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasReporter"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasRisk"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasSender"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasTask"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#managedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#manages"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#reads"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#reportsTo"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#worksOn"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#worksOnDeliverable"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#worksOnFeature"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#worksOnIssue"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+    </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#assignedTo"/>
         <Class IRI="#Task"/>
@@ -1309,13 +1543,43 @@
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <FunctionalDataProperty>
+        <DataProperty IRI="#costs"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#hasBudget"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasContent"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasEndDate"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
+        <DataProperty IRI="#hasMeetingDuration"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasMemberName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasPhaseDuration"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#hasProjectName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasStakeholderName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasStartDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasTaskDeadline"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasTaskDescription"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#officeLocated"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#costs"/>
