@@ -229,17 +229,6 @@ WHERE {
 ORDER BY ?taskType
 ```
 
-### What are the material resources of a given project?
-```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
- 
-```
-
 ### Which project member uses which material resources?
 ```sql
 PREFIX : <http://www.semanticweb.org/ivo/project-management>
@@ -248,8 +237,23 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT DISTINCT ?memberName ?memberType ?resource
+WHERE {
+    {
+        ?memberType rdfs:subClassOf :HumanResource .
+        ?member rdf:type ?memberType .
+    }
+    UNION
+    {
+        ?memberType rdfs:subClassOf :TeamMember .
+        ?member rdf:type ?memberType .
+    }
+    ?member :hasMemberName ?memberName .
+    ?member :usesMaterialResource ?resource
+}
+ORDER BY ?memberType
 ```
+
 
 ### What emails are sent in connection with the project? By whom and for whom?
 ```sql
