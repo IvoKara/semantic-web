@@ -127,6 +127,9 @@
         <Class IRI="#Server"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Software"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Sponsor"/>
     </Declaration>
     <Declaration>
@@ -184,9 +187,6 @@
         <ObjectProperty IRI="#hasRecepient"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasReporter"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasRisk"/>
     </Declaration>
     <Declaration>
@@ -206,6 +206,15 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#reads"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#readsEmail"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#readsReport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#reportedBy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#reportsTo"/>
@@ -370,6 +379,9 @@
         <NamedIndividual IRI="#ScheduleRisk_Short_Deadline"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Software_Figma"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Sponsor_Person1"/>
     </Declaration>
     <Declaration>
@@ -458,6 +470,13 @@
     <SubClassOf>
         <Class IRI="#Document"/>
         <Class IRI="#MaterialResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Document"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasContent"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Email"/>
@@ -603,7 +622,7 @@
         <Class IRI="#Meeting"/>
         <DataExactCardinality cardinality="1">
             <DataProperty IRI="#hasMeetingDuration"/>
-            <Datatype abbreviatedIRI="xsd:long"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
         </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -769,7 +788,7 @@
         <Class IRI="#ProjectPhase"/>
         <DataExactCardinality cardinality="1">
             <DataProperty IRI="#hasPhaseDuration"/>
-            <Datatype abbreviatedIRI="xsd:long"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
         </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -787,7 +806,7 @@
     <SubClassOf>
         <Class IRI="#Report"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasReporter"/>
+            <ObjectProperty IRI="#reportedBy"/>
             <ObjectUnionOf>
                 <Class IRI="#ProjectManager"/>
                 <Class IRI="#TeamMember"/>
@@ -828,6 +847,10 @@
         <Class IRI="#TechnicalEquipment"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Software"/>
+        <Class IRI="#TechnicalEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Sponsor"/>
         <Class IRI="#Stakeholder"/>
     </SubClassOf>
@@ -843,6 +866,7 @@
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#reads"/>
             <ObjectUnionOf>
+                <Class IRI="#Document"/>
                 <Class IRI="#Email"/>
                 <Class IRI="#Report"/>
             </ObjectUnionOf>
@@ -1138,6 +1162,10 @@
         <NamedIndividual IRI="#ScheduleRisk_Short_Deadline"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Software"/>
+        <NamedIndividual IRI="#Software_Figma"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Sponsor"/>
         <NamedIndividual IRI="#Sponsor_Person1"/>
     </ClassAssertion>
@@ -1154,6 +1182,593 @@
         <NamedIndividual IRI="#Client_Company1"/>
         <NamedIndividual IRI="#Project_Nexus"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reads"/>
+        <NamedIndividual IRI="#Client_Company1"/>
+        <NamedIndividual IRI="#Document_NexusContract"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#assignedTo"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#assignedTo"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#assignedTo"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#assignedTo"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#assignedTo"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#assignedTo"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#managedBy"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#readsEmail"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+        <NamedIndividual IRI="#Email_To_Team"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+        <NamedIndividual IRI="#PersonalComputer_Lenovo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+        <NamedIndividual IRI="#Software_Figma"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#worksOnFeature"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+        <NamedIndividual IRI="#Feature_Improve_UI"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#managedBy"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#readsEmail"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+        <NamedIndividual IRI="#Email_To_Team"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+        <NamedIndividual IRI="#CloudService_AWS_Lambda"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#worksOnFeature"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+        <NamedIndividual IRI="#Feature_Improve_UI"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#readsEmail"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+        <NamedIndividual IRI="#Email_To_Team"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+        <NamedIndividual IRI="#CloudService_AWS_EC2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+        <NamedIndividual IRI="#Database_Firebase"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#worksOnIssue"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+        <NamedIndividual IRI="#Isssue_Optimize_Database_Queries"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <NamedIndividual IRI="#Email_ToStakeholder"/>
+        <NamedIndividual IRI="#Client_Company1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEmailSender"/>
+        <NamedIndividual IRI="#Email_ToStakeholder"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <NamedIndividual IRI="#Email_To_Team"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <NamedIndividual IRI="#Email_To_Team"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEmailSender"/>
+        <NamedIndividual IRI="#Email_To_Team"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <NamedIndividual IRI="#InPlaceMeeting_Argue_With_Client"/>
+        <NamedIndividual IRI="#Client_Company1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <NamedIndividual IRI="#InPlaceMeeting_Argue_With_Client"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <NamedIndividual IRI="#InPlaceMeeting_Argue_With_Client"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+        <NamedIndividual IRI="#OnlineMeeting_UI_Meeting"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+        <NamedIndividual IRI="#OnlineMeeting_UI_Meeting"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#manages"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reads"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+        <NamedIndividual IRI="#Document_NexusContract"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+        <NamedIndividual IRI="#Chair_JohnsChair"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+        <NamedIndividual IRI="#Desk_JohnsDesk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+        <NamedIndividual IRI="#PersonalComputer_Mac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#fundedBy"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#Sponsor_Person1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPhase"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#ClosingPhase_Project_Documentation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPhase"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#ExecutionPhase_Task_Alignment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPhase"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#InitiationPhase_Project_Kickoff"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPhase"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#MonitoringPhase_Performance_Reporting"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPhase"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#PlanningPhase_Requirements_Gathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProjectMember"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProjectMember"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProjectMember"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProjectMember"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProjectMember"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRisk"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#ScheduleRisk_Short_Deadline"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTask"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTask"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isInPhase"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#ExecutionPhase_Task_Alignment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#managedBy"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#worksOnIssue"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+        <NamedIndividual IRI="#Issue_Fix_Borken_TestCases"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reportedBy"/>
+        <NamedIndividual IRI="#Report_Deployment_Status"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reportsTo"/>
+        <NamedIndividual IRI="#Report_Deployment_Status"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reportedBy"/>
+        <NamedIndividual IRI="#Report_StatisticsReport"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reportsTo"/>
+        <NamedIndividual IRI="#Report_StatisticsReport"/>
+        <NamedIndividual IRI="#Client_Company1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#funds"/>
+        <NamedIndividual IRI="#Sponsor_Person2"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#managedBy"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#costs"/>
+        <NamedIndividual IRI="#Chair_JohnsChair"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">30.50</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStakeholderName"/>
+        <NamedIndividual IRI="#Client_Company1"/>
+        <Literal>Hello Stakeholder LTD</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhaseDuration"/>
+        <NamedIndividual IRI="#ClosingPhase_Project_Documentation"/>
+        <Literal>2 weeks</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#costs"/>
+        <NamedIndividual IRI="#CloudService_AWS_EC2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">12.43</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#costs"/>
+        <NamedIndividual IRI="#CloudService_AWS_Lambda"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3.7654</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#costs"/>
+        <NamedIndividual IRI="#Database_Firebase"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">200</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDeadline"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-30T09:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDescription"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+        <Literal>Demonstrate the work unitl now to the client</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMemberName"/>
+        <NamedIndividual IRI="#Designer_Maria"/>
+        <Literal>Maria Menson</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMemberName"/>
+        <NamedIndividual IRI="#Developer_Anthony"/>
+        <Literal>Anthony Miller</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasContent"/>
+        <NamedIndividual IRI="#Document_NexusContract"/>
+        <Literal>Contract Between Client 1 and Project Nexus</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasContent"/>
+        <NamedIndividual IRI="#Email_ToStakeholder"/>
+        <Literal>Hello Company1,
+
+We wish to work with you.
+
+Best Regars,
+John Doe
+Project Manager</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasContent"/>
+        <NamedIndividual IRI="#Email_To_Team"/>
+        <Literal>Hello Team!</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhaseDuration"/>
+        <NamedIndividual IRI="#ExecutionPhase_Task_Alignment"/>
+        <Literal>1 week</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDeadline"/>
+        <NamedIndividual IRI="#Feature_Improve_UI"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-02-13T10:15:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDescription"/>
+        <NamedIndividual IRI="#Feature_Improve_UI"/>
+        <Literal>Improvements over the User Experience</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMeetingDuration"/>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+        <Literal>1 hour</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMeetingDuration"/>
+        <NamedIndividual IRI="#InPlaceMeeting_Argue_With_Client"/>
+        <Literal>1 hour 30 minutes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhaseDuration"/>
+        <NamedIndividual IRI="#InitiationPhase_Project_Kickoff"/>
+        <Literal>1 month</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDeadline"/>
+        <NamedIndividual IRI="#Isssue_Optimize_Database_Queries"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-30T10:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDescription"/>
+        <NamedIndividual IRI="#Isssue_Optimize_Database_Queries"/>
+        <Literal>To fix the Queries to the Database because they are slow</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDeadline"/>
+        <NamedIndividual IRI="#Issue_Fix_Borken_TestCases"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-02-22T13:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDescription"/>
+        <NamedIndividual IRI="#Issue_Fix_Borken_TestCases"/>
+        <Literal>Fix PHPUnit test because features have changed</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDeadline"/>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-30T16:30:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTaskDeadline"/>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+        <Literal>Implementation of the Authentication featues including 2FA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhaseDuration"/>
+        <NamedIndividual IRI="#MonitoringPhase_Performance_Reporting"/>
+        <Literal>3 weeks</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#officeLocated"/>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+        <Literal>Bulgaria, Sofia, Bussiness park</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMeetingDuration"/>
+        <NamedIndividual IRI="#OnlineMeeting_UI_Meeting"/>
+        <Literal>30 minutes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#costs"/>
+        <NamedIndividual IRI="#PersonalComputer_Lenovo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1250.67</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#costs"/>
+        <NamedIndividual IRI="#PersonalComputer_Mac"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3200</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhaseDuration"/>
+        <NamedIndividual IRI="#PlanningPhase_Requirements_Gathering"/>
+        <Literal>2 weeks 4 days</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMemberName"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+        <Literal>John Doe</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBudget"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">10000000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasEndDate"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2026-02-06T09:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasProjectName"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <Literal>Project Nexus</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStartDate"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-06T09:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMemberName"/>
+        <NamedIndividual IRI="#QualityAssurance_Dan"/>
+        <Literal>Dan Fisher</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasContent"/>
+        <NamedIndividual IRI="#Report_Deployment_Status"/>
+        <Literal>Deployment Status: Success 
+All steps in pipeline Run without errors</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasContent"/>
+        <NamedIndividual IRI="#Report_StatisticsReport"/>
+        <Literal>Good Statistics</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStakeholderName"/>
+        <NamedIndividual IRI="#Sponsor_Person1"/>
+        <Literal>Melany Rose</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStakeholderName"/>
+        <NamedIndividual IRI="#Sponsor_Person2"/>
+        <Literal>Terry Chu</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMemberName"/>
+        <NamedIndividual IRI="#TeamLead_Mathew"/>
+        <Literal>Mathew Wood</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#assignedTo"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -1185,10 +1800,6 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRecepient"/>
         <ObjectProperty IRI="#hasCommunicationMember"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasReporter"/>
-        <ObjectProperty IRI="#hasSender"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRisk"/>
@@ -1207,6 +1818,18 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#readsEmail"/>
+        <ObjectProperty IRI="#reads"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#readsReport"/>
+        <ObjectProperty IRI="#reads"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#reportedBy"/>
+        <ObjectProperty IRI="#hasSender"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#reportsTo"/>
         <ObjectProperty IRI="#hasRecepient"/>
     </SubObjectPropertyOf>
@@ -1239,17 +1862,19 @@
         <ObjectProperty IRI="#funds"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#readsEmail"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#managedBy"/>
         <ObjectProperty IRI="#manages"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#readsReport"/>
+        <ObjectProperty IRI="#reportsTo"/>
+    </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasEmailSender"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasPhase"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasReporter"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasRisk"/>
@@ -1258,7 +1883,13 @@
         <ObjectProperty IRI="#hasSender"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isInPhase"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#managedBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#reportedBy"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#reportsTo"/>
@@ -1306,9 +1937,6 @@
         <ObjectProperty IRI="#hasRecepient"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#hasReporter"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasRisk"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
@@ -1318,6 +1946,9 @@
         <ObjectProperty IRI="#hasTask"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isInPhase"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
         <ObjectProperty IRI="#managedBy"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
@@ -1325,6 +1956,15 @@
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#reads"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#readsEmail"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#readsReport"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#reportedBy"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#reportsTo"/>
@@ -1384,9 +2024,6 @@
         <ObjectProperty IRI="#hasRecepient"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#hasReporter"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasRisk"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
@@ -1396,6 +2033,9 @@
         <ObjectProperty IRI="#hasTask"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isInPhase"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#managedBy"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
@@ -1403,6 +2043,15 @@
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#reads"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#readsEmail"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#readsReport"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#reportedBy"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#reportsTo"/>
@@ -1483,10 +2132,6 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasReporter"/>
-        <Class IRI="#Report"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRisk"/>
         <Class IRI="#Project"/>
     </ObjectPropertyDomain>
@@ -1522,6 +2167,24 @@
             <Class IRI="#HumanResource"/>
             <Class IRI="#Stakeholder"/>
         </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#readsEmail"/>
+        <ObjectUnionOf>
+            <Class IRI="#HumanResource"/>
+            <Class IRI="#Stakeholder"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#readsReport"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reportedBy"/>
+        <Class IRI="#Report"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#reportsTo"/>
@@ -1577,7 +2240,7 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEmailRecepient"/>
         <ObjectUnionOf>
-            <Class IRI="#ProjectManager"/>
+            <Class IRI="#HumanResource"/>
             <Class IRI="#Stakeholder"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
@@ -1627,15 +2290,8 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasRecepient"/>
         <ObjectUnionOf>
-            <Class IRI="#ProjectManager"/>
+            <Class IRI="#HumanResource"/>
             <Class IRI="#Stakeholder"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasReporter"/>
-        <ObjectUnionOf>
-            <Class IRI="#ProjectManager"/>
-            <Class IRI="#TeamMember"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1675,6 +2331,21 @@
             <Class IRI="#Document"/>
             <Class IRI="#Email"/>
             <Class IRI="#Report"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#readsEmail"/>
+        <Class IRI="#Email"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#readsReport"/>
+        <Class IRI="#Report"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reportedBy"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#TeamMember"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1793,6 +2464,7 @@
     <DataPropertyDomain>
         <DataProperty IRI="#hasContent"/>
         <ObjectUnionOf>
+            <Class IRI="#Document"/>
             <Class IRI="#Email"/>
             <Class IRI="#Report"/>
         </ObjectUnionOf>
@@ -1858,7 +2530,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasMeetingDuration"/>
-        <Datatype abbreviatedIRI="xsd:long"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasMemberName"/>
@@ -1866,7 +2538,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasPhaseDuration"/>
-        <Datatype abbreviatedIRI="xsd:long"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasProjectName"/>
