@@ -193,6 +193,9 @@
         <ObjectProperty IRI="#hasSender"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasTask"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isInPhase"/>
     </Declaration>
     <Declaration>
@@ -202,10 +205,13 @@
         <ObjectProperty IRI="#manages"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#reads"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#reportsTo"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesResource"/>
+        <ObjectProperty IRI="#usesMaterialResource"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#worksOn"/>
@@ -227,6 +233,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasBudget"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasContent"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasEndDate"/>
@@ -366,6 +375,13 @@
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Email"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasContent"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ExecutionPhase"/>
         <Class IRI="#ProjectPhase"/>
     </SubClassOf>
@@ -382,12 +398,68 @@
         <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#HumanResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#usesMaterialResource"/>
+            <Class IRI="#MaterialResource"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#worksOn"/>
+            <Class IRI="#Task"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#HybridMeeting"/>
         <Class IRI="#Meeting"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#HybridMeeting"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ProjectManager"/>
+                    <Class IRI="#Stakeholder"/>
+                    <Class IRI="#TeamMember"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ProjectManager"/>
+                    <Class IRI="#Stakeholder"/>
+                    <Class IRI="#TeamMember"/>
+                </ObjectUnionOf>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#InPlaceMeeting"/>
         <Class IRI="#Meeting"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InPlaceMeeting"/>
+        <ObjectIntersectionOf>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ProjectManager"/>
+                    <Class IRI="#Stakeholder"/>
+                    <Class IRI="#TeamMember"/>
+                </ObjectUnionOf>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="0">
+                <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ProjectManager"/>
+                    <Class IRI="#Stakeholder"/>
+                    <Class IRI="#TeamMember"/>
+                </ObjectUnionOf>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InitiationPhase"/>
@@ -406,6 +478,24 @@
         <Class IRI="#Communication"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Meeting"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasMeetingMember"/>
+            <ObjectUnionOf>
+                <Class IRI="#ProjectManager"/>
+                <Class IRI="#Stakeholder"/>
+                <Class IRI="#TeamMember"/>
+            </ObjectUnionOf>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meeting"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasMeetingDuration"/>
+            <Datatype abbreviatedIRI="xsd:long"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Milestone"/>
         <Class IRI="#Task"/>
     </SubClassOf>
@@ -418,8 +508,36 @@
         <Class IRI="#WorkspaceEquipment"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Office"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#officeLocated"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#OnlineMeeting"/>
         <Class IRI="#Meeting"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnlineMeeting"/>
+        <ObjectIntersectionOf>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ProjectManager"/>
+                    <Class IRI="#Stakeholder"/>
+                    <Class IRI="#TeamMember"/>
+                </ObjectUnionOf>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="0">
+                <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ProjectManager"/>
+                    <Class IRI="#Stakeholder"/>
+                    <Class IRI="#TeamMember"/>
+                </ObjectUnionOf>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PersonalComputer"/>
@@ -436,9 +554,30 @@
     <SubClassOf>
         <Class IRI="#Project"/>
         <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#fundedBy"/>
+            <Class IRI="#Stakeholder"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasProjectMember"/>
             <Class IRI="#TeamMember"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTask"/>
+            <Class IRI="#Task"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasRisk"/>
+            <Class IRI="#Risk"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Project"/>
@@ -487,8 +626,40 @@
         <Class IRI="#HumanResource"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ProjectManager"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manages"/>
+            <Class IRI="#Project"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProjectManager"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manages"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProjectManager"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#reads"/>
+            <ObjectUnionOf>
+                <Class IRI="#Document"/>
+                <Class IRI="#Email"/>
+                <Class IRI="#Report"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ProjectPhase"/>
         <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProjectPhase"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasPhaseDuration"/>
+            <Datatype abbreviatedIRI="xsd:long"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#QualityAssurance"/>
@@ -501,6 +672,33 @@
     <SubClassOf>
         <Class IRI="#Report"/>
         <Class IRI="#Communication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Report"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasReporter"/>
+            <ObjectUnionOf>
+                <Class IRI="#ProjectManager"/>
+                <Class IRI="#TeamMember"/>
+            </ObjectUnionOf>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Report"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#reportsTo"/>
+            <ObjectUnionOf>
+                <Class IRI="#ProjectManager"/>
+                <Class IRI="#Stakeholder"/>
+            </ObjectUnionOf>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Report"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasContent"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Resource"/>
@@ -523,8 +721,56 @@
         <Class IRI="#Stakeholder"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Stakeholder"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#funds"/>
+            <Class IRI="#Project"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stakeholder"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#reads"/>
+            <ObjectUnionOf>
+                <Class IRI="#Email"/>
+                <Class IRI="#Report"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stakeholder"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasStakeholderName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Task"/>
         <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#assignedTo"/>
+            <ObjectUnionOf>
+                <Class IRI="#ProjectManager"/>
+                <Class IRI="#TeamMember"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasTaskDeadline"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasTaskDescription"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TeamLead"/>
@@ -535,12 +781,43 @@
         <Class IRI="#HumanResource"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#TeamMember"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#reads"/>
+            <ObjectUnionOf>
+                <Class IRI="#Document"/>
+                <Class IRI="#Email"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TeamMember"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#managedBy"/>
+            <Class IRI="#ProjectManager"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#TechnicalEquipment"/>
         <Class IRI="#MaterialResource"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#TechnicalEquipment"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#costs"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#WorkspaceEquipment"/>
         <Class IRI="#MaterialResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkspaceEquipment"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#costs"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Chair"/>
@@ -670,7 +947,7 @@
         <ObjectProperty IRI="#hasRecepient"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesResource"/>
+        <ObjectProperty IRI="#usesMaterialResource"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -786,6 +1063,10 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTask"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isInPhase"/>
         <Class IRI="#Project"/>
     </ObjectPropertyDomain>
@@ -801,11 +1082,18 @@
         <Class IRI="#ProjectManager"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reads"/>
+        <ObjectUnionOf>
+            <Class IRI="#HumanResource"/>
+            <Class IRI="#Stakeholder"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#reportsTo"/>
         <Class IRI="#Report"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesResource"/>
+        <ObjectProperty IRI="#usesMaterialResource"/>
         <ObjectUnionOf>
             <Class IRI="#ProjectManager"/>
             <Class IRI="#TeamMember"/>
@@ -813,7 +1101,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#worksOn"/>
-        <Class IRI="#TeamMember"/>
+        <Class IRI="#HumanResource"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#worksOnDeliverable"/>
@@ -833,7 +1121,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#assignedTo"/>
-        <Class IRI="#TeamMember"/>
+        <Class IRI="#HumanResource"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#fundedBy"/>
@@ -928,6 +1216,10 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTask"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isInPhase"/>
         <Class IRI="#ProjectPhase"/>
     </ObjectPropertyRange>
@@ -943,6 +1235,14 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#reads"/>
+        <ObjectUnionOf>
+            <Class IRI="#Document"/>
+            <Class IRI="#Email"/>
+            <Class IRI="#Report"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#reportsTo"/>
         <ObjectUnionOf>
             <Class IRI="#ProjectManager"/>
@@ -950,8 +1250,11 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesResource"/>
-        <Class IRI="#MaterialResource"/>
+        <ObjectProperty IRI="#usesMaterialResource"/>
+        <ObjectUnionOf>
+            <Class IRI="#Document"/>
+            <Class IRI="#MaterialResource"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#worksOn"/>
@@ -1023,6 +1326,13 @@
         <Class IRI="#Project"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#hasContent"/>
+        <ObjectUnionOf>
+            <Class IRI="#Email"/>
+            <Class IRI="#Report"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#hasEndDate"/>
         <Class IRI="#Project"/>
     </DataPropertyDomain>
@@ -1074,12 +1384,16 @@
         <Datatype abbreviatedIRI="xsd:decimal"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#hasContent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#hasEndDate"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasMeetingDuration"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasMemberName"/>
@@ -1087,7 +1401,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasPhaseDuration"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasProjectName"/>
