@@ -1,20 +1,7 @@
 # Ontology Questions
 
 ## Table of contents
-- [Which are the members of a project?](#wchich-are-the-members-of-a-project)
-- [Which project manager manages a given project member?](#which-project-manager-manages-a-given-project-member)
-- [Who funds a given project?](#who-funds-a-given-project)
-- [What is the budget of a given project?](#what-is-the-budget-of-a-given-project)
-- [What is the start and end date for a given project?](#what-is-the-start-and-end-date-for-a-given-project)
-- [Which project manager manages which projects?](#which-project-manager-manages-which-projects)
-- [What phase is a given project currently in?](#what-phase-is-a-given-project-currently-in)
-- [What are the deliverables of a given project?](#what-are-the-deliverables-of-a-given-project)
-- [What tasks does a given project member work on?](#what-tasks-does-a-given-project-member-work-on)
-- [What are the material resources of a given project?](#what-are-the-material-resources-of-a-given-project)
-- [Which project member uses which material resources?](#which-project-member-uses-which-material-resources)
-- [What emails are sent in connection with the project? By whom and for whom?](#what-emails-are-sent-in-connection-with-the-project-by-whom-and-for-whom)
-- [What reports are made in connection with the project? By whom and for whom?](#what-reports-are-made-in-connection-with-the-project-by-whom-and-for-whom)
-- [What meetings are held in connection with the project? Who are its users and what is your function?](#what-meetings-are-held-in-connection-with-the-project-who-are-its-users-and-what-is-your-function)
+
 
 ## Questions
 
@@ -68,7 +55,7 @@ WHERE {
     ?stakeholderType rdfs:subClassOf :Stakeholder .
     ?stakeholder rdf:type ?stakeholderType .
     ?stakeholder :hasStakeholderName ?stakeholderName .
-     {
+    {
         ?stakeholder :funds ?project .
     }
     UNION
@@ -86,7 +73,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?projectName ?budget
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectName ?projectName .
+   ?project :hasBudget ?budget
+}
 ```
 
 ### What is the start and end date for a given project?
@@ -97,7 +89,13 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?projectName ?startDate ?endDate
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectName ?projectName .
+    ?project :hasStartDate ?startDate .
+    ?project :hasEndDate ?endDate
+}
 ```
 
 ### Which project manager manages which projects?
@@ -108,10 +106,23 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?projectManagerName ?projectName
+WHERE {
+    ?projectManager rdf:type :ProjectManager .
+    ?projectManager :hasMemberName ?projectManagerName .
+    ?project rdf:type :Project .
+    ?project :hasProjectName ?projectName
+    {
+        ?project :managedBy ?projectManager .
+    }
+    UNION
+    {
+        ?projectManager :manages ?project .
+    }    
+}
 ```
 
-### What phases does a project go through?
+### What phases does a project go through? What is the duration of each phase?
 ```sql
 PREFIX : <http://www.semanticweb.org/ivo/project-management>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -119,18 +130,15 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
-```
-
-### What is the change in each phase?
-```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
- 
+SELECT ?projectName ?phase ?phaseType ?phaseDuration
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectName ?projectName .
+    ?project :hasPhase ?phase .
+    ?phase rdf:type ?phaseType .
+    ?phaseType rdfs:subClassOf :ProjectPhase .
+    ?phase :hasPhaseDuration ?phaseDuration
+}
 ```
 
 ### What risks does a given project have?
@@ -141,7 +149,14 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?projectName ?risk ?riskType
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectName ?projectName .
+    ?project :hasRisk ?risk .
+    ?risk rdf:type ?riskType .
+    ?riskType rdfs:subClassOf :Risk
+}
 ```
 
 ### What phase is a given project currently in?
@@ -152,7 +167,14 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?projectName ?phase ?phaseType ?phaseDuration
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectName ?projectName .
+    ?project :isInPhase ?phase .
+    ?phase rdf:type ?phaseType .
+    ?phaseType rdfs:subClassOf :ProjectPhase
+}
 ```
 
 ### What are the deliverables of a given project?
