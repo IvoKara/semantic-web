@@ -13,13 +13,22 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#Chair"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Client"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ClosingPhase"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#CloudService"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Communication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Database"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Deliverable"/>
@@ -28,16 +37,22 @@
         <Class IRI="#Designer"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Desk"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Developer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Document"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Email"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Equipment"/>
+        <Class IRI="#ExecutionPhase"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ExecutionPhase"/>
+        <Class IRI="#Feature"/>
     </Declaration>
     <Declaration>
         <Class IRI="#FinancialRisk"/>
@@ -46,13 +61,19 @@
         <Class IRI="#HumanResource"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#HybridMeeting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InPlaceMeeting"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#InitiationPhase"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MaterialResource"/>
+        <Class IRI="#Issue"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Materials"/>
+        <Class IRI="#MaterialResource"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Meeting"/>
@@ -62,6 +83,15 @@
     </Declaration>
     <Declaration>
         <Class IRI="#MonitoringPhase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Office"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnlineMeeting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonalComputer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PlanningPhase"/>
@@ -94,6 +124,9 @@
         <Class IRI="#ScheduleRisk"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Server"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Sponsor"/>
     </Declaration>
     <Declaration>
@@ -109,67 +142,88 @@
         <Class IRI="#TeamMember"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#affectsFinance"/>
+        <Class IRI="#TechnicalEquipment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#affectsQuality"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#affectsSchedule"/>
+        <Class IRI="#WorkspaceEquipment"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#assignedTo"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#followsPhase"/>
+        <ObjectProperty IRI="#fundedBy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasCommunication"/>
+        <ObjectProperty IRI="#funds"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasDeliverable"/>
+        <ObjectProperty IRI="#hasCommunicationMember"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasDocument"/>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasEmail"/>
+        <ObjectProperty IRI="#hasEmailSender"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMeeting"/>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMilestone"/>
+        <ObjectProperty IRI="#hasMeetingMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPhase"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasReport"/>
+        <ObjectProperty IRI="#hasProjectMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRecepient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReporter"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasRisk"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasStakeholder"/>
+        <ObjectProperty IRI="#hasSender"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasTask"/>
+        <ObjectProperty IRI="#isInPhase"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#managedBy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#requiresEquipment"/>
+        <ObjectProperty IRI="#manages"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#requiresMaterial"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#sponsoredBy"/>
+        <ObjectProperty IRI="#reportsTo"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesResource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#worksOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#worksOnDeliverable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#worksOnFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#worksOnIssue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#costs"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasBudget"/>
@@ -178,13 +232,16 @@
         <DataProperty IRI="#hasEndDate"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasMeetingDuration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMemberName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPhaseDuration"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasProjectName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasResourceName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasRiskDescription"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasStakeholderName"/>
@@ -198,6 +255,39 @@
     <Declaration>
         <DataProperty IRI="#hasTaskDescription"/>
     </Declaration>
+    <Declaration>
+        <DataProperty IRI="#officeLocated"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Meeting"/>
+        <ObjectUnionOf>
+            <Class IRI="#HybridMeeting"/>
+            <Class IRI="#InPlaceMeeting"/>
+            <Class IRI="#OnlineMeeting"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ProjectPhase"/>
+        <ObjectUnionOf>
+            <Class IRI="#ClosingPhase"/>
+            <Class IRI="#ExecutionPhase"/>
+            <Class IRI="#InitiationPhase"/>
+            <Class IRI="#MonitoringPhase"/>
+            <Class IRI="#PlanningPhase"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Risk"/>
+        <ObjectUnionOf>
+            <Class IRI="#FinancialRisk"/>
+            <Class IRI="#QualityRisk"/>
+            <Class IRI="#ScheduleRisk"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Chair"/>
+        <Class IRI="#WorkspaceEquipment"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Client"/>
         <Class IRI="#Stakeholder"/>
@@ -205,6 +295,29 @@
     <SubClassOf>
         <Class IRI="#ClosingPhase"/>
         <Class IRI="#ProjectPhase"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CloudService"/>
+        <Class IRI="#TechnicalEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Communication"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Communication"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasCommunicationMember"/>
+            <ObjectUnionOf>
+                <Class IRI="#ProjectManager"/>
+                <Class IRI="#Stakeholder"/>
+                <Class IRI="#TeamMember"/>
+            </ObjectUnionOf>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Database"/>
+        <Class IRI="#TechnicalEquipment"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Deliverable"/>
@@ -215,20 +328,50 @@
         <Class IRI="#TeamMember"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Desk"/>
+        <Class IRI="#WorkspaceEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Developer"/>
         <Class IRI="#TeamMember"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Document"/>
+        <Class IRI="#MaterialResource"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Email"/>
         <Class IRI="#Communication"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Equipment"/>
-        <Class IRI="#MaterialResource"/>
+        <Class IRI="#Email"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasEmailRecepient"/>
+            <ObjectUnionOf>
+                <Class IRI="#ProjectManager"/>
+                <Class IRI="#Stakeholder"/>
+                <Class IRI="#TeamMember"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Email"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasEmailSender"/>
+            <ObjectUnionOf>
+                <Class IRI="#ProjectManager"/>
+                <Class IRI="#Stakeholder"/>
+                <Class IRI="#TeamMember"/>
+            </ObjectUnionOf>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ExecutionPhase"/>
         <Class IRI="#ProjectPhase"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Feature"/>
+        <Class IRI="#Task"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FinancialRisk"/>
@@ -239,16 +382,24 @@
         <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#HybridMeeting"/>
+        <Class IRI="#Meeting"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InPlaceMeeting"/>
+        <Class IRI="#Meeting"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#InitiationPhase"/>
         <Class IRI="#ProjectPhase"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MaterialResource"/>
-        <Class IRI="#Resource"/>
+        <Class IRI="#Issue"/>
+        <Class IRI="#Task"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Materials"/>
         <Class IRI="#MaterialResource"/>
+        <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Meeting"/>
@@ -263,8 +414,73 @@
         <Class IRI="#ProjectPhase"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Office"/>
+        <Class IRI="#WorkspaceEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnlineMeeting"/>
+        <Class IRI="#Meeting"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonalComputer"/>
+        <Class IRI="#TechnicalEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PlanningPhase"/>
         <Class IRI="#ProjectPhase"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProjectMember"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isInPhase"/>
+            <Class IRI="#ProjectPhase"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#managedBy"/>
+            <Class IRI="#ProjectManager"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasBudget"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasEndDate"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasProjectName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasStartDate"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProjectManager"/>
@@ -272,7 +488,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProjectPhase"/>
-        <Class IRI="#Project"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#QualityAssurance"/>
@@ -287,8 +503,20 @@
         <Class IRI="#Communication"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Resource"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ScheduleRisk"/>
         <Class IRI="#Risk"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Server"/>
+        <Class IRI="#TechnicalEquipment"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sponsor"/>
@@ -296,7 +524,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Task"/>
-        <Class IRI="#Project"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TeamLead"/>
@@ -306,6 +534,19 @@
         <Class IRI="#TeamMember"/>
         <Class IRI="#HumanResource"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TechnicalEquipment"/>
+        <Class IRI="#MaterialResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkspaceEquipment"/>
+        <Class IRI="#MaterialResource"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Chair"/>
+        <Class IRI="#Desk"/>
+        <Class IRI="#Office"/>
+    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Client"/>
         <Class IRI="#Sponsor"/>
@@ -318,14 +559,24 @@
         <Class IRI="#PlanningPhase"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#CloudService"/>
+        <Class IRI="#Database"/>
+        <Class IRI="#PersonalComputer"/>
+        <Class IRI="#Server"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Communication"/>
         <Class IRI="#Project"/>
+        <Class IRI="#ProjectPhase"/>
         <Class IRI="#Resource"/>
         <Class IRI="#Risk"/>
         <Class IRI="#Stakeholder"/>
+        <Class IRI="#Task"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Deliverable"/>
+        <Class IRI="#Feature"/>
+        <Class IRI="#Issue"/>
         <Class IRI="#Milestone"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -335,13 +586,14 @@
         <Class IRI="#TeamLead"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#Document"/>
+        <Class IRI="#TechnicalEquipment"/>
+        <Class IRI="#WorkspaceEquipment"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Email"/>
         <Class IRI="#Meeting"/>
         <Class IRI="#Report"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Equipment"/>
-        <Class IRI="#Materials"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#FinancialRisk"/>
@@ -353,123 +605,374 @@
         <Class IRI="#MaterialResource"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#HybridMeeting"/>
+        <Class IRI="#InPlaceMeeting"/>
+        <Class IRI="#OnlineMeeting"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#ProjectManager"/>
         <Class IRI="#TeamMember"/>
     </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ProjectPhase"/>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#assignedTo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasRecepient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEmailSender"/>
+        <ObjectProperty IRI="#hasSender"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <ObjectProperty IRI="#hasMeetingMember"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMeetingMember"/>
+        <ObjectProperty IRI="#hasCommunicationMember"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+        <ObjectProperty IRI="#hasMeetingMember"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPhase"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasCommunicationMember"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasReporter"/>
+        <ObjectProperty IRI="#hasSender"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRisk"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSender"/>
+        <ObjectProperty IRI="#hasCommunicationMember"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isInPhase"/>
+        <ObjectProperty IRI="#hasPhase"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#managedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#reportsTo"/>
+        <ObjectProperty IRI="#hasRecepient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesResource"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#worksOnDeliverable"/>
+        <ObjectProperty IRI="#worksOn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#worksOnFeature"/>
+        <ObjectProperty IRI="#worksOn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#worksOnIssue"/>
+        <ObjectProperty IRI="#worksOn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+        <ObjectProperty IRI="#worksOn"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#assignedTo"/>
+        <ObjectProperty IRI="#worksOn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#fundedBy"/>
+        <ObjectProperty IRI="#funds"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#managedBy"/>
+        <ObjectProperty IRI="#manages"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSender"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#reportsTo"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSender"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#reportsTo"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#assignedTo"/>
         <Class IRI="#Task"/>
-    </DisjointClasses>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#affectsFinance"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#affectsQuality"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#affectsSchedule"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#assignedTo"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#followsPhase"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#fundedBy"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#funds"/>
+        <Class IRI="#Stakeholder"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCommunicationMember"/>
+        <Class IRI="#Communication"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <Class IRI="#Email"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEmailSender"/>
+        <Class IRI="#Email"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <ObjectUnionOf>
+            <Class IRI="#HybridMeeting"/>
+            <Class IRI="#InPlaceMeeting"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMeetingMember"/>
+        <Class IRI="#Meeting"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+        <ObjectUnionOf>
+            <Class IRI="#HybridMeeting"/>
+            <Class IRI="#OnlineMeeting"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPhase"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasCommunication"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasDeliverable"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasDocument"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasEmail"/>
-        <ObjectProperty IRI="#hasCommunication"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasMeeting"/>
-        <ObjectProperty IRI="#hasCommunication"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasMilestone"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasPhase"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasReport"/>
-        <ObjectProperty IRI="#hasCommunication"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProjectMember"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectUnionOf>
+            <Class IRI="#Email"/>
+            <Class IRI="#Report"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasReporter"/>
+        <Class IRI="#Report"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRisk"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasStakeholder"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTask"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSender"/>
+        <ObjectUnionOf>
+            <Class IRI="#Email"/>
+            <Class IRI="#Report"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInPhase"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#managedBy"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#requiresEquipment"/>
+        <ObjectUnionOf>
+            <Class IRI="#Project"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#manages"/>
+        <Class IRI="#ProjectManager"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reportsTo"/>
+        <Class IRI="#Report"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#requiresMaterial"/>
-        <ObjectProperty IRI="#usesResource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#sponsoredBy"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usesResource"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <DisjointObjectProperties>
-        <ObjectProperty IRI="#affectsFinance"/>
-        <ObjectProperty IRI="#affectsQuality"/>
-        <ObjectProperty IRI="#affectsSchedule"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#worksOn"/>
+        <Class IRI="#TeamMember"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#worksOnDeliverable"/>
+        <Class IRI="#TeamMember"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#worksOnFeature"/>
+        <Class IRI="#TeamMember"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#worksOnIssue"/>
+        <Class IRI="#TeamMember"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+        <Class IRI="#TeamMember"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#assignedTo"/>
-        <ObjectProperty IRI="#hasCommunication"/>
-        <ObjectProperty IRI="#hasDeliverable"/>
-        <ObjectProperty IRI="#hasDocument"/>
-        <ObjectProperty IRI="#hasMilestone"/>
+        <Class IRI="#TeamMember"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#fundedBy"/>
+        <Class IRI="#Stakeholder"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#funds"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCommunicationMember"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEmailSender"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInPlaceMeetingMember"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMeetingMember"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOnlineMeetingMember"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPhase"/>
+        <Class IRI="#ProjectPhase"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProjectMember"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasReporter"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasRisk"/>
-        <ObjectProperty IRI="#hasStakeholder"/>
-        <ObjectProperty IRI="#hasTask"/>
+        <Class IRI="#Risk"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSender"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInPhase"/>
+        <Class IRI="#ProjectPhase"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#managedBy"/>
-        <ObjectProperty IRI="#sponsoredBy"/>
+        <Class IRI="#ProjectManager"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#manages"/>
+        <ObjectUnionOf>
+            <Class IRI="#Project"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reportsTo"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#Stakeholder"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#usesResource"/>
-    </DisjointObjectProperties>
-    <DisjointObjectProperties>
-        <ObjectProperty IRI="#hasEmail"/>
-        <ObjectProperty IRI="#hasMeeting"/>
-        <ObjectProperty IRI="#hasReport"/>
-    </DisjointObjectProperties>
-    <DisjointObjectProperties>
-        <ObjectProperty IRI="#requiresEquipment"/>
-        <ObjectProperty IRI="#requiresMaterial"/>
-    </DisjointObjectProperties>
+        <Class IRI="#MaterialResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#worksOn"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#worksOnDeliverable"/>
+        <Class IRI="#Deliverable"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#worksOnFeature"/>
+        <Class IRI="#Feature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#worksOnIssue"/>
+        <Class IRI="#Issue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#worksOnMilestone"/>
+        <Class IRI="#Milestone"/>
+    </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasBudget"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
@@ -479,15 +982,11 @@
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
+        <DataProperty IRI="#hasPhaseDuration"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="#hasProjectName"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasResourceName"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasRiskDescription"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
@@ -506,6 +1005,19 @@
         <DataProperty IRI="#hasTaskDescription"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasBudget"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasEndDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasProjectName"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#costs"/>
+        <Class IRI="#MaterialResource"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasBudget"/>
         <Class IRI="#Project"/>
@@ -515,16 +1027,23 @@
         <Class IRI="#Project"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#hasMeetingDuration"/>
+        <Class IRI="#Meeting"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMemberName"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProjectManager"/>
+            <Class IRI="#TeamMember"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPhaseDuration"/>
+        <Class IRI="#ProjectPhase"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#hasProjectName"/>
         <Class IRI="#Project"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasResourceName"/>
-        <Class IRI="#Resource"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasRiskDescription"/>
-        <Class IRI="#Risk"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasStakeholderName"/>
@@ -542,6 +1061,14 @@
         <DataProperty IRI="#hasTaskDescription"/>
         <Class IRI="#Task"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#officeLocated"/>
+        <Class IRI="#Office"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#costs"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasBudget"/>
         <Datatype abbreviatedIRI="xsd:decimal"/>
@@ -551,15 +1078,19 @@
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#hasMeetingDuration"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMemberName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPhaseDuration"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#hasProjectName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasResourceName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasRiskDescription"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -568,7 +1099,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasStartDate"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasTaskDeadline"/>
@@ -578,6 +1109,25 @@
         <DataProperty IRI="#hasTaskDescription"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#officeLocated"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#costs</IRI>
+        <Literal>Material Resource cost value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMeetingDuration</IRI>
+        <Literal>Meeting duration in seconds</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPhaseDuration</IRI>
+        <Literal>Phase Duration in seconds</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
