@@ -268,10 +268,31 @@
         <DataProperty IRI="#officeLocated"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Chair_JohnsChair"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Client_Company1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ClosingPhase_Project_Documentation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CloudService_AWS_EC2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CloudService_AWS_Lambda"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Database_Firebase"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Designer_Maria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Desk_JohnsDesk"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Developer_Anthony"/>
@@ -280,10 +301,73 @@
         <NamedIndividual IRI="#Developer_Sarah"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Document_NexusContract"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Email_ToStakeholder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Email_To_Team"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ExecutionPhase_Task_Alignment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Feature_Improve_UI"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InPlaceMeeting_Argue_With_Client"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InitiationPhase_Project_Kickoff"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Isssue_Optimize_Database_Queries"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Issue_Fix_Borken_TestCases"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MonitoringPhase_Performance_Reporting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OnlineMeeting_UI_Meeting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PersonalComputer_Lenovo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PersonalComputer_Mac"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PlanningPhase_Requirements_Gathering"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ProjectManager_John"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Project_Nexus"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Report_Deployment_Status"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Report_StatisticsReport"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ScheduleRisk_Short_Deadline"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Sponsor_Person1"/>
@@ -918,12 +1002,40 @@
         <Class IRI="#TeamMember"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#Chair"/>
+        <NamedIndividual IRI="#Chair_JohnsChair"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Client"/>
         <NamedIndividual IRI="#Client_Company1"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#ClosingPhase"/>
+        <NamedIndividual IRI="#ClosingPhase_Project_Documentation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CloudService"/>
+        <NamedIndividual IRI="#CloudService_AWS_EC2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CloudService"/>
+        <NamedIndividual IRI="#CloudService_AWS_Lambda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Database"/>
+        <NamedIndividual IRI="#Database_Firebase"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Deliverable"/>
+        <NamedIndividual IRI="#Deliverable_Demo_Of_Auth_Screen"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Designer"/>
         <NamedIndividual IRI="#Designer_Maria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Desk"/>
+        <NamedIndividual IRI="#Desk_JohnsDesk"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Developer"/>
@@ -934,12 +1046,96 @@
         <NamedIndividual IRI="#Developer_Sarah"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Document"/>
+        <NamedIndividual IRI="#Document_NexusContract"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Email"/>
+        <NamedIndividual IRI="#Email_ToStakeholder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Email"/>
+        <NamedIndividual IRI="#Email_To_Team"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ExecutionPhase"/>
+        <NamedIndividual IRI="#ExecutionPhase_Task_Alignment"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feature"/>
+        <NamedIndividual IRI="#Feature_Improve_UI"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HybridMeeting"/>
+        <NamedIndividual IRI="#HybridMeeting_WeeklySync"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#InPlaceMeeting"/>
+        <NamedIndividual IRI="#InPlaceMeeting_Argue_With_Client"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#InitiationPhase"/>
+        <NamedIndividual IRI="#InitiationPhase_Project_Kickoff"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Issue"/>
+        <NamedIndividual IRI="#Isssue_Optimize_Database_Queries"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Issue"/>
+        <NamedIndividual IRI="#Issue_Fix_Borken_TestCases"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Milestone"/>
+        <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MonitoringPhase"/>
+        <NamedIndividual IRI="#MonitoringPhase_Performance_Reporting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Office"/>
+        <NamedIndividual IRI="#Office_NexusHeadqarters"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OnlineMeeting"/>
+        <NamedIndividual IRI="#OnlineMeeting_UI_Meeting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PersonalComputer"/>
+        <NamedIndividual IRI="#PersonalComputer_Lenovo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PersonalComputer"/>
+        <NamedIndividual IRI="#PersonalComputer_Mac"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningPhase"/>
+        <NamedIndividual IRI="#PlanningPhase_Requirements_Gathering"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#ProjectManager"/>
         <NamedIndividual IRI="#ProjectManager_John"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Project"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#QualityAssurance"/>
         <NamedIndividual IRI="#QualityAssurance_Dan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Report"/>
+        <NamedIndividual IRI="#Report_Deployment_Status"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Report"/>
+        <NamedIndividual IRI="#Report_StatisticsReport"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ScheduleRisk"/>
+        <NamedIndividual IRI="#ScheduleRisk_Short_Deadline"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Sponsor"/>
@@ -953,6 +1149,11 @@
         <Class IRI="#TeamLead"/>
         <NamedIndividual IRI="#TeamLead_Mathew"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#funds"/>
+        <NamedIndividual IRI="#Client_Company1"/>
+        <NamedIndividual IRI="#Project_Nexus"/>
+    </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#assignedTo"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
