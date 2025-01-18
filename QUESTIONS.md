@@ -185,7 +185,15 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?projectName ?task ?taskDeadline ?taskDescription
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectName ?projectName .
+    ?project :hasTask ?task .
+    ?task rdf:type :Deliverable .
+    ?task :hasTaskDeadline ?taskDeadline .
+    ?task :hasTaskDescription ?taskDescription
+} 
 ```
 
 ### What tasks does a given project member work on?
@@ -196,7 +204,29 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT DISTINCT ?member ?memberType ?task ?taskType
+WHERE {
+    {
+        ?memberType rdfs:subClassOf :HumanResource .
+        ?member rdf:type ?memberType .
+    }
+    UNION
+    {
+        ?memberType rdfs:subClassOf :TeamMember .
+        ?member rdf:type ?memberType .
+    }
+    ?taskType rdfs:subClassOf :Task .
+    ?task rdf:type ?taskType .
+    ?worksOn rdfs:subPropertyOf :worksOn .
+    {
+        ?member ?worksOn ?task .
+    }
+    UNION
+    {
+        ?task :assignedTo ?member .
+    }
+}
+ORDER BY ?taskType
 ```
 
 ### What are the material resources of a given project?
