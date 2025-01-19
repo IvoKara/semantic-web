@@ -1,7 +1,23 @@
 # Ontology Questions
 
 ## Table of contents
-
+- [Which are the members of a project?](#which-are-the-members-of-a-project)
+- [Which project manager manages a given project member?](#which-project-manager-manages-a-given-project-member)
+- [Who funds a given project?](#who-funds-a-given-project)
+- [What is the budget of a given project?](#what-is-the-budget-of-a-given-project)
+- [What is the start and end date for a given project?](#what-is-the-start-and-end-date-for-a-given-project)
+- [Which project manager manages which projects?](#which-project-manager-manages-which-projects)
+- [What phases does a project go through? What is the duration of each phase?](#what-phases-does-a-project-go-through-what-is-the-duration-of-each-phase)
+- [What risks does a given project have?](#what-risks-does-a-given-project-have)
+- [What phase is a given project currently in?](#what-phase-is-a-given-project-currently-in)
+- [What are the deliverables of a given project?](#what-are-the-deliverables-of-a-given-project)
+- [What tasks does a given project member work on?](#what-tasks-does-a-given-project-member-work-on)
+- [Which project member uses which material resources?](#which-project-member-uses-which-material-resources)
+- [What emails are sent in connection with the project? By whom and for whom?](#what-emails-are-sent-in-connection-with-the-project-by-whom-and-for-whom)
+- [What reports are made in connection with the project? By whom and for whom?](#what-reports-are-made-in-connection-with-the-project-by-whom-and-for-whom)
+- [What meetings are held in connection with the project? Who are its member and what is its duration?](#what-meetings-are-held-in-connection-with-the-project-who-are-its-member-and-what-is-its-duration)
+- [Check wether a project has any risk or not?](#check-wether-a-project-has-any-risk-or-not)
+- [Check wether a project is in Monitoring Phase or not?](#check-wether-a-project-is-in-monitoring-phase-or-not)
 
 ## Questions
 
