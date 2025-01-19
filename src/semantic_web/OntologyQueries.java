@@ -3,7 +3,7 @@ package semantic_web;
 public class OntologyQueries {
 
     public static final String MEMBERS_OF_A_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -20,7 +20,7 @@ public class OntologyQueries {
             """;
 
     public static final String PROJECT_MANAGER_MANAGES_A_GIVEN_PROJECT_MEMBER = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -41,7 +41,7 @@ public class OntologyQueries {
             """;
 
     public static final String WHO_FUNDS_A_GIVEN_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -63,7 +63,7 @@ public class OntologyQueries {
             """;
 
     public static final String BUDGET_OF_A_GIVEN_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -78,7 +78,7 @@ public class OntologyQueries {
             """;
 
     public static final String START_AND_END_DATE_FOR_A_GIVEN_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -94,7 +94,7 @@ public class OntologyQueries {
             """;
 
     public static final String PROJECT_MANAGER_MANAGES_WHICH_PROJECTS = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -117,7 +117,7 @@ public class OntologyQueries {
             """;
 
     public static final String PHASES_OF_A_PROJECT_AND_DURATION = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -135,7 +135,7 @@ public class OntologyQueries {
             """;
 
     public static final String RISKS_OF_A_GIVEN_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -152,7 +152,7 @@ public class OntologyQueries {
             """;
 
     public static final String CURRENT_PHASE_OF_A_GIVEN_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -170,7 +170,7 @@ public class OntologyQueries {
             """;
 
     public static final String DELIVERABLES_OF_A_GIVEN_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -188,7 +188,7 @@ public class OntologyQueries {
             """;
 
     public static final String TASKS_OF_A_GIVEN_PROJECT_MEMBER = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -220,7 +220,7 @@ public class OntologyQueries {
             """;
 
     public static final String PROJECT_MEMBER_USES_WHICH_MATERIAL_RESOURCES = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -244,7 +244,7 @@ public class OntologyQueries {
             """;
 
     public static final String EMAILS_SENT_IN_CONNECTION_WITH_THE_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -267,7 +267,7 @@ public class OntologyQueries {
             """;
 
     public static final String REPORTS_MADE_IN_CONNECTION_WITH_THE_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -290,7 +290,7 @@ public class OntologyQueries {
             """;
 
     public static final String MEETINGS_HELD_IN_CONNECTION_WITH_THE_PROJECT = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -310,7 +310,7 @@ public class OntologyQueries {
             """;
 
     public static final String CHECK_PROJECT_HAS_ANY_RISK = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -322,7 +322,7 @@ public class OntologyQueries {
             """;
 
     public static final String CHECK_PROJECT_IS_IN_MONITORING_PHASE = """
-            PREFIX : <http://www.semanticweb.org/ivo/project-management>
+            PREFIX : <http://www.semanticweb.org/ivo/project-management#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
