@@ -1878,9 +1878,6 @@ All steps in pipeline Run without errors</Literal>
         <ObjectProperty IRI="#hasEmailSender"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasRisk"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSender"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
