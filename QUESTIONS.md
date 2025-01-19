@@ -263,7 +263,20 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?project ?email ?sender ?recipient
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectEmail ?email .
+    ?email rdf:type :Email .
+    ?email :hasEmailSender ?sender .
+    {
+        ?email :hasEmailRecipient ?recipient .
+    }
+    UNION
+    {
+        ?recipient :readsEmail ?email .
+    }
+}
 ```
 
 ### What reports are made in connection with the project? By whom and for whom?
@@ -274,10 +287,23 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?project ?report ?reporter ?reportRecipient
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectReport ?report .
+    ?report rdf:type :Report .
+    ?report :reportedBy ?reporter .
+    {
+        ?report :reportsTo ?reportRecipient .
+    }
+    UNION
+    {
+        ?reportRecipient :readsReport ?report .
+    }
+}
 ```
 
-### What meetings are held in connection with the project? Who are its users and what is your function?
+### What meetings are held in connection with the project? Who are its member and what is its duration?
 ```sql
 PREFIX : <http://www.semanticweb.org/ivo/project-management>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -285,5 +311,15 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
- 
+SELECT ?project ?meeting ?meetingType  ?hasMeetingMember ?meetingMember ?meetingDuration
+WHERE {
+    ?project rdf:type :Project .
+    ?project :hasProjectMeeting ?meeting .
+    ?meetingType rdfs:subClassOf :Meeting .
+    ?meeting rdf:type ?meetingType .
+    ?hasMeetingMember rdfs:subPropertyOf :hasMeetingMember .
+    ?meeting ?hasMeetingMember ?meetingMember .
+    ?meeting :hasMeetingDuration ?meetingDuration
+}
+ORDER BY ?meeting
 ```

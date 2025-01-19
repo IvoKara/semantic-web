@@ -160,7 +160,7 @@
         <ObjectProperty IRI="#hasCommunicationMember"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasEmailSender"/>
@@ -190,7 +190,7 @@
         <ObjectProperty IRI="#hasProjectReport"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasRecipient"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasRisk"/>
@@ -488,7 +488,7 @@
     <SubClassOf>
         <Class IRI="#Email"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasEmailRecepient"/>
+            <ObjectProperty IRI="#hasEmailRecipient"/>
             <ObjectUnionOf>
                 <Class IRI="#ProjectManager"/>
                 <Class IRI="#Stakeholder"/>
@@ -1289,7 +1289,7 @@
         <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
         <NamedIndividual IRI="#Email_ToStakeholder"/>
         <NamedIndividual IRI="#Client_Company1"/>
     </ObjectPropertyAssertion>
@@ -1299,12 +1299,12 @@
         <NamedIndividual IRI="#ProjectManager_John"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
         <NamedIndividual IRI="#Email_To_Team"/>
         <NamedIndividual IRI="#QualityAssurance_Dan"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
         <NamedIndividual IRI="#Email_To_Team"/>
         <NamedIndividual IRI="#TeamLead_Mathew"/>
     </ObjectPropertyAssertion>
@@ -1775,8 +1775,8 @@ All steps in pipeline Run without errors</Literal>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
-        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
+        <ObjectProperty IRI="#hasRecipient"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasEmailSender"/>
@@ -1799,7 +1799,7 @@ All steps in pipeline Run without errors</Literal>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasRecipient"/>
         <ObjectProperty IRI="#hasCommunicationMember"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1832,7 +1832,7 @@ All steps in pipeline Run without errors</Literal>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#reportsTo"/>
-        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasRecipient"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#usesMaterialResource"/>
@@ -1863,7 +1863,7 @@ All steps in pipeline Run without errors</Literal>
         <ObjectProperty IRI="#funds"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
         <ObjectProperty IRI="#readsEmail"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
@@ -1914,7 +1914,7 @@ All steps in pipeline Run without errors</Literal>
         <ObjectProperty IRI="#hasCommunicationMember"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasEmailSender"/>
@@ -1944,7 +1944,7 @@ All steps in pipeline Run without errors</Literal>
         <ObjectProperty IRI="#hasProjectReport"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasRecipient"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasRisk"/>
@@ -2010,7 +2010,7 @@ All steps in pipeline Run without errors</Literal>
         <ObjectProperty IRI="#hasCommunicationMember"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasEmailSender"/>
@@ -2040,7 +2040,7 @@ All steps in pipeline Run without errors</Literal>
         <ObjectProperty IRI="#hasProjectReport"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasRecipient"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasRisk"/>
@@ -2110,7 +2110,7 @@ All steps in pipeline Run without errors</Literal>
         <Class IRI="#Communication"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
         <Class IRI="#Email"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2156,7 +2156,7 @@ All steps in pipeline Run without errors</Literal>
         <Class IRI="#Project"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasRecipient"/>
         <ObjectUnionOf>
             <Class IRI="#Email"/>
             <Class IRI="#Report"/>
@@ -2269,7 +2269,7 @@ All steps in pipeline Run without errors</Literal>
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEmailRecepient"/>
+        <ObjectProperty IRI="#hasEmailRecipient"/>
         <ObjectUnionOf>
             <Class IRI="#HumanResource"/>
             <Class IRI="#Stakeholder"/>
@@ -2331,7 +2331,7 @@ All steps in pipeline Run without errors</Literal>
         <Class IRI="#Report"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasRecepient"/>
+        <ObjectProperty IRI="#hasRecipient"/>
         <ObjectUnionOf>
             <Class IRI="#HumanResource"/>
             <Class IRI="#Stakeholder"/>
