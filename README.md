@@ -8,12 +8,15 @@ The simple implementation should utilze the [Apache Jena](https://jena.apache.or
 
 The chosen domain is related to  **Project Management**‍💼 and is chosen from “*Software Engineering (10th Edition)*” by Ian Sommerville.
 
+## Docs
+* 📘 [Documentation](https://docs.google.com/document/d/1jpAOiObpsfWjI6VPHE3s0ncCgO-zDQdg/edit?usp=sharing&ouid=113509445846785795396&rtpof=true&sd=true) [BG]
+
 ## Folder Structure
 
 The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies. **Here you should put the jena `*.jar` library files** ⚠
+- `lib`: the folder to maintain dependencies. **Here you should put the Jena `*.jar` library files** ⚠
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
