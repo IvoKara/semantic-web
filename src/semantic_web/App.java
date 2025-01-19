@@ -31,20 +31,26 @@ public class App {
     }
 
     public static void executeQuery(String queryString, Dataset dataset) {
-        String[] variables = getSelectVariables(queryString);
-
         Query query = QueryFactory.create(queryString);
         QueryExecution queryExecution = QueryExecutionFactory.create(query, dataset);
 
         try {
-            ResultSet results = queryExecution.execSelect();
-            while (results.hasNext()) {
-                QuerySolution solution = results.nextSolution();
+            if (queryString.contains("SELECT")) {
+                String[] variables = getSelectVariables(queryString);
 
-                System.out.println("------------");
-                for (String variable : variables) {
-                    System.out.println(variable + ": " + solution.get(variable));
+                ResultSet results = queryExecution.execSelect();
+                while (results.hasNext()) {
+                    QuerySolution solution = results.nextSolution();
+
+                    System.out.println("------------");
+                    for (String variable : variables) {
+                        System.out.println(variable + ": " + solution.get(variable));
+                    }
                 }
+            } else if (queryString.contains("ASK")) {
+                System.out.println("------------");
+                boolean result = queryExecution.execAsk();
+                System.out.println(result);
             }
         } finally {
             queryExecution.close();
