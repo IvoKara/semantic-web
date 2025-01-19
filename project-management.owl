@@ -1274,6 +1274,11 @@
         <NamedIndividual IRI="#Milestone_Implement_Authentication"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#managedBy"/>
+        <NamedIndividual IRI="#Developer_Sarah"/>
+        <NamedIndividual IRI="#ProjectManager_John"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#readsEmail"/>
         <NamedIndividual IRI="#Developer_Sarah"/>
         <NamedIndividual IRI="#Email_To_Team"/>

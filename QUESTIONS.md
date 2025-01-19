@@ -37,7 +37,13 @@ SELECT ?project ?member ?projectManager
 WHERE {
     ?project rdf:type :Project .
     ?project :hasProjectMember ?member .
-    ?member :managedBy ?projectManager
+    {
+        ?member :managedBy ?projectManager .
+    }
+    UNION
+    {
+        ?projectManager :manages ?member .
+    }
 }
 ```
 
@@ -173,7 +179,8 @@ WHERE {
     ?project :hasProjectName ?projectName .
     ?project :isInPhase ?phase .
     ?phase rdf:type ?phaseType .
-    ?phaseType rdfs:subClassOf :ProjectPhase
+    ?phaseType rdfs:subClassOf :ProjectPhase .
+    ?phase :hasPhaseDuration ?phaseDuration
 }
 ```
 
