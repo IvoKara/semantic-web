@@ -1,31 +1,36 @@
 # Ontology Questions
 
 ## Table of contents
-- [Which are the members of a project?](#which-are-the-members-of-a-project)
-- [Which project manager manages a given project member?](#which-project-manager-manages-a-given-project-member)
-- [Who funds a given project?](#who-funds-a-given-project)
-- [What is the budget of a given project?](#what-is-the-budget-of-a-given-project)
-- [What is the start and end date for a given project?](#what-is-the-start-and-end-date-for-a-given-project)
-- [Which project manager manages which projects?](#which-project-manager-manages-which-projects)
-- [What phases does a project go through? What is the duration of each phase?](#what-phases-does-a-project-go-through-what-is-the-duration-of-each-phase)
-- [What risks does a given project have?](#what-risks-does-a-given-project-have)
-- [What phase is a given project currently in?](#what-phase-is-a-given-project-currently-in)
-- [What are the deliverables of a given project?](#what-are-the-deliverables-of-a-given-project)
-- [What tasks does a given project member work on?](#what-tasks-does-a-given-project-member-work-on)
-- [Which project member uses which material resources?](#which-project-member-uses-which-material-resources)
-- [What emails are sent in connection with the project? By whom and for whom?](#what-emails-are-sent-in-connection-with-the-project-by-whom-and-for-whom)
-- [What reports are made in connection with the project? By whom and for whom?](#what-reports-are-made-in-connection-with-the-project-by-whom-and-for-whom)
-- [What meetings are held in connection with the project? Who are its member and what is its duration?](#what-meetings-are-held-in-connection-with-the-project-who-are-its-member-and-what-is-its-duration)
-- [Check wether a project has any risk or not?](#check-wether-a-project-has-any-risk-or-not)
-- [Check wether a project is in Monitoring Phase or not?](#check-wether-a-project-is-in-monitoring-phase-or-not)
+
+- [Ontology Questions](#ontology-questions)
+  - [Table of contents](#table-of-contents)
+  - [Questions](#questions)
+    - [Which are the members of a project?](#which-are-the-members-of-a-project)
+    - [Which project manager manages a given project member?](#which-project-manager-manages-a-given-project-member)
+    - [Who funds a given project?](#who-funds-a-given-project)
+    - [What is the budget of a given project?](#what-is-the-budget-of-a-given-project)
+    - [What is the start and end date for a given project?](#what-is-the-start-and-end-date-for-a-given-project)
+    - [Which project manager manages which projects?](#which-project-manager-manages-which-projects)
+    - [What phases does a project go through? What is the duration of each phase?](#what-phases-does-a-project-go-through-what-is-the-duration-of-each-phase)
+    - [What risks does a given project have?](#what-risks-does-a-given-project-have)
+    - [What phase is a given project currently in?](#what-phase-is-a-given-project-currently-in)
+    - [What are the deliverables of a given project?](#what-are-the-deliverables-of-a-given-project)
+    - [What tasks does a given project member work on?](#what-tasks-does-a-given-project-member-work-on)
+    - [Which project member uses which material resources?](#which-project-member-uses-which-material-resources)
+    - [What emails are sent in connection with the project? By whom and for whom?](#what-emails-are-sent-in-connection-with-the-project-by-whom-and-for-whom)
+    - [What reports are made in connection with the project? By whom and for whom?](#what-reports-are-made-in-connection-with-the-project-by-whom-and-for-whom)
+    - [What meetings are held in connection with the project? Who are its member and what is its duration?](#what-meetings-are-held-in-connection-with-the-project-who-are-its-member-and-what-is-its-duration)
+    - [Check wether a project has any risk or not?](#check-wether-a-project-has-any-risk-or-not)
+    - [Check wether a project is in Monitoring Phase or not?](#check-wether-a-project-is-in-monitoring-phase-or-not)
 
 ## Questions
 
 ### Which are the members of a project?
+
 In this case the members of a Project which name is "Project Nexus".
 
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -42,8 +47,9 @@ WHERE {
 ```
 
 ### Which project manager manages a given project member?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -64,8 +70,9 @@ WHERE {
 ```
 
 ### Who funds a given project?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -88,8 +95,9 @@ WHERE {
 ```
 
 ### What is the budget of a given project?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -104,8 +112,9 @@ WHERE {
 ```
 
 ### What is the start and end date for a given project?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -121,8 +130,9 @@ WHERE {
 ```
 
 ### Which project manager manages which projects?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -145,8 +155,9 @@ WHERE {
 ```
 
 ### What phases does a project go through? What is the duration of each phase?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -164,8 +175,9 @@ WHERE {
 ```
 
 ### What risks does a given project have?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -182,8 +194,9 @@ WHERE {
 ```
 
 ### What phase is a given project currently in?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -201,8 +214,9 @@ WHERE {
 ```
 
 ### What are the deliverables of a given project?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -220,8 +234,9 @@ WHERE {
 ```
 
 ### What tasks does a given project member work on?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -253,8 +268,9 @@ ORDER BY ?taskType
 ```
 
 ### Which project member uses which material resources?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -277,10 +293,10 @@ WHERE {
 ORDER BY ?memberType
 ```
 
-
 ### What emails are sent in connection with the project? By whom and for whom?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -303,8 +319,9 @@ WHERE {
 ```
 
 ### What reports are made in connection with the project? By whom and for whom?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -327,8 +344,9 @@ WHERE {
 ```
 
 ### What meetings are held in connection with the project? Who are its member and what is its duration?
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -348,9 +366,11 @@ ORDER BY ?meeting
 ```
 
 ### Check wether a project has any risk or not?
+
 In this case is `Project_Nexus`
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -362,9 +382,11 @@ ASK {
 ```
 
 ### Check wether a project is in Monitoring Phase or not?
+
 In this case is `Project_Nexus`
+
 ```sql
-PREFIX : <http://www.semanticweb.org/ivo/project-management>
+PREFIX : <http://www.semanticweb.org/ivo/project-management#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
